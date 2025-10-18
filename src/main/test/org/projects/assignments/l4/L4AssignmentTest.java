@@ -1,12 +1,12 @@
 package org.projects.assignments.l4;
 
-import org.projects.assignments.models.Employee;
-import org.testng.annotations.Test;
+import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.List;
 import java.util.Map;
 
-import static org.testng.AssertJUnit.assertEquals;
+import org.projects.assignments.models.Employee;
+import org.testng.annotations.Test;
 
 public class L4AssignmentTest {
 

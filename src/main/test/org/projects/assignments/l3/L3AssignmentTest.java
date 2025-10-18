@@ -1,12 +1,12 @@
 package org.projects.assignments.l3;
 
-import org.projects.assignments.models.Employee;
-import org.testng.annotations.Test;
+import static org.testng.Assert.assertEquals;
 
 import java.util.List;
 import java.util.Map;
 
-import static org.testng.Assert.assertEquals;
+import org.projects.assignments.models.Employee;
+import org.testng.annotations.Test;
 
 public class L3AssignmentTest {
     L3Assignment l3Assignment = new L3Assignment();

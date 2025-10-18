@@ -1,12 +1,12 @@
 package org.projects.assignments.l2;
 
-import org.projects.assignments.models.Employee;
-import org.testng.annotations.Test;
+import static org.testng.Assert.assertEquals;
 
 import java.util.List;
 import java.util.Map;
 
-import static org.testng.Assert.assertEquals;
+import org.projects.assignments.models.Employee;
+import org.testng.annotations.Test;
 
 public class L2AssignmentTest {
     L2Assignment l2Assignment = new L2Assignment();
