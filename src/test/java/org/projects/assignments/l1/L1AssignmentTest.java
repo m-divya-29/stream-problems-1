@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.junit.jupiter.api.Test;
+import org.projects.assignments.models.Employee;
 
 class L1AssignmentTest {
 
@@ -97,7 +98,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(1, 2, 3, 4, 5, 6, 7, 8);
 		List<Integer> expected = List.of(4, 5, 6, 7, 8);
 		List<Integer> result = l1Assignment.skipFirstN(input, 3);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 10: Join Strings
@@ -206,5 +207,18 @@ class L1AssignmentTest {
 				List.of("banana"), 'c', List.of("cherry"));
 		Map<Character, List<String>> result = l1Assignment.groupByFirstChar(input);
 		assertEquals(result, expected);
+	}
+
+	// Test for Question 20: Group By First Char
+	@Test
+	public void testfilterByDepartment() {
+
+		List<Employee> employees = List.of(new Employee("Alice", "HR", 60000.0), new Employee("Bob", "IT", 60000.0),
+				new Employee("Charlie", "HR", 60000.0), new Employee("Dave", "IT", 60000.0));
+		List<Employee> result = l1Assignment.filterByDepartment(employees, "IT");
+
+		assertEquals(List.of(new Employee("Bob", "IT", 60000.0), //
+				new Employee("Dave", "IT", 60000.0)), //
+				result);
 	}
 }
