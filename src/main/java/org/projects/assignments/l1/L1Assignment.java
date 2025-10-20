@@ -14,10 +14,7 @@ public class L1Assignment {
 	 */
 	public int sumOfNumbers(List<Integer> numbers) {
 		// write code here using Java Streams API
-
-		int sum = numbers.stream().mapToInt(Integer::valueOf).sum();
-
-		return sum;
+		return -1;
 	}
 
 	/**
