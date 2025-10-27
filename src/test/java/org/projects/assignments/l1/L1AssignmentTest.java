@@ -18,7 +18,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(1, 2, 3, 4, 5);
 		int expected = 15;
 		int result = l1Assignment.sumOfNumbers(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 2: Find Maximum Number
@@ -27,7 +27,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(10, 5, 20, 8, 15);
 		int expected = 20;
 		int result = l1Assignment.findMaxNumber(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 3: Filter Even Numbers
@@ -36,7 +36,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(1, 2, 3, 4, 5, 6, 7, 8);
 		List<Integer> expected = List.of(2, 4, 6, 8);
 		List<Integer> result = l1Assignment.filterEvenNumbers(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 4: Convert to Uppercase
@@ -45,7 +45,7 @@ class L1AssignmentTest {
 		List<String> input = List.of("apple", "banana", "cherry");
 		List<String> expected = List.of("APPLE", "BANANA", "CHERRY");
 		List<String> result = l1Assignment.convertToUppercase(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 5: Remove Duplicates
@@ -54,7 +54,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(1, 2, 2, 3, 4, 4, 5);
 		List<Integer> expected = List.of(1, 2, 3, 4, 5);
 		List<Integer> result = l1Assignment.removeDuplicates(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 6: Check if All Positive
@@ -63,7 +63,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(1, 2, 3, 4, 5);
 		boolean expected = true;
 		boolean result = l1Assignment.areAllPositive(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	@Test
@@ -71,7 +71,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(1, -2, 3, 4, 5);
 		boolean expected = false;
 		boolean result = l1Assignment.areAllPositive(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 7: Count Strings Starting With
@@ -80,7 +80,7 @@ class L1AssignmentTest {
 		List<String> input = List.of("Apple", "Banana", "Apricot", "Cherry", "Avocado");
 		long expected = 3;
 		long result = l1Assignment.countStringsStartingWith(input, 'A');
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 8: Square Numbers
@@ -89,7 +89,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(1, 2, 3, 4, 5);
 		List<Integer> expected = List.of(1, 4, 9, 16, 25);
 		List<Integer> result = l1Assignment.squareNumbers(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 9: Skip First N Elements
@@ -107,7 +107,7 @@ class L1AssignmentTest {
 		List<String> input = List.of("Java", "Python", "JavaScript", "C++");
 		String expected = "Java, Python, JavaScript, C++";
 		String result = l1Assignment.joinStrings(input, ", ");
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 11: Find First Greater Than
@@ -116,7 +116,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(5, 8, 12, 3, 15, 7);
 		Integer expected = 12;
 		Integer result = l1Assignment.findFirstGreaterThan(input, 10);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 12: Sort By Length
@@ -125,7 +125,7 @@ class L1AssignmentTest {
 		List<String> input = List.of("apple", "kiwi", "banana", "pear");
 		List<String> expected = List.of("kiwi", "pear", "apple", "banana");
 		List<String> result = l1Assignment.sortByLength(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 13: Flatten List
@@ -134,7 +134,7 @@ class L1AssignmentTest {
 		List<List<Integer>> input = List.of(List.of(1, 2), List.of(3, 4), List.of(5, 6, 7));
 		List<Integer> expected = List.of(1, 2, 3, 4, 5, 6, 7);
 		List<Integer> result = l1Assignment.flattenList(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 14: Calculate Average
@@ -143,7 +143,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(10, 20, 30, 40, 50);
 		double expected = 30.0;
 		double result = l1Assignment.calculateAverage(input);
-		assertEquals(result, expected, 0.01);
+		assertEquals(expected, result, 0.01);
 	}
 
 	// Test for Question 15: Partition Even Odd
@@ -152,7 +152,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(1, 2, 3, 4, 5, 6);
 		Map<Boolean, List<Integer>> expected = Map.of(false, List.of(1, 3, 5), true, List.of(2, 4, 6));
 		Map<Boolean, List<Integer>> result = l1Assignment.partitionEvenOdd(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 16: Find Second Smallest
@@ -161,7 +161,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(10, 5, 20, 8, 15, 3);
 		Integer expected = 5;
 		Integer result = l1Assignment.findSecondSmallest(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 17: String to Length Map
@@ -170,7 +170,7 @@ class L1AssignmentTest {
 		List<String> input = List.of("apple", "banana", "kiwi");
 		Map<String, Integer> expected = Map.of("apple", 5, "banana", 6, "kiwi", 4);
 		Map<String, Integer> result = l1Assignment.stringToLengthMap(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 18: Get First N Elements
@@ -179,7 +179,7 @@ class L1AssignmentTest {
 		List<Integer> input = List.of(10, 20, 30, 40, 50, 60);
 		List<Integer> expected = List.of(10, 20, 30);
 		List<Integer> result = l1Assignment.getFirstN(input, 3);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 19: Contains Element
@@ -188,7 +188,7 @@ class L1AssignmentTest {
 		List<String> input = List.of("Python", "Java", "C++", "JavaScript");
 		boolean expected = true;
 		boolean result = l1Assignment.containsElement(input, "Java");
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	@Test
@@ -196,7 +196,7 @@ class L1AssignmentTest {
 		List<String> input = List.of("Python", "Java", "C++", "JavaScript");
 		boolean expected = false;
 		boolean result = l1Assignment.containsElement(input, "Ruby");
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 20: Group By First Char
@@ -206,7 +206,7 @@ class L1AssignmentTest {
 		Map<Character, List<String>> expected = Map.of('a', List.of("apple", "apricot", "avocado"), 'b',
 				List.of("banana"), 'c', List.of("cherry"));
 		Map<Character, List<String>> result = l1Assignment.groupByFirstChar(input);
-		assertEquals(result, expected);
+		assertEquals(expected, result);
 	}
 
 	// Test for Question 20: Group By First Char
