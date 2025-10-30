@@ -15,7 +15,7 @@ Feel free to modify and extend the assignments as needed for your learning purpo
 
 ---
 ## Some useful tips
-### Set jdk to 21 to just this project(powershell)
+### Set jdk to 21 to just this project(run this in Intellij's powershell)
 ```
 $env:JAVA_HOME="C:\Users\itsme\Downloads\jdk-21.0.5_windows-x64_bin\jdk-21.0.5"
 $env:PATH="$env:JAVA_HOME\bin;$env:PATH"
