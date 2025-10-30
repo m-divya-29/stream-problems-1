@@ -1,7 +1,8 @@
 package org.projects.assignments.l2;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.projects.assignments.models.Employee;
 import org.projects.assignments.models.EmployeeCustomView;
@@ -9,15 +10,21 @@ import org.projects.assignments.models.EmployeeCustomView;
 public class L2Assignment {
     /*
      * 1. Find Employees with Nth Highest unique Salary using Java Streams API.
-     * Example: Employees: [ Employee("Alice", "HR", 60000), Employee("Bob", "IT",
-     * 80000), Employee("Charlie", "HR", 70000), Employee("David", "IT", 90000),
-     * Employee("Eve", "Finance", 80000) ] N = 3 Output: 70000
+     * Example:
+     * Employees: [ Employee("Alice", "HR", 60000), Employee("Bob", "IT", 80000), Employee("Charlie", "HR", 70000), Employee("David", "IT", 90000),
+     * Employee("Eve", "Finance", 80000) ]
+     * N = 3
+     * Output: 70000
      *
      * If there is no Nth highest unique salary, return -1.
      */
     public Double findEmployeesWithNthHighestUniqueSalary(Employee[] employees, int N) {
-
-        return null;
+       return Arrays.stream(employees)
+               .map(Employee::salary)
+               .sorted(Comparator.reverseOrder())
+               .distinct()
+               .skip(N - 1)
+               .findFirst().orElse(-1.0);
     }
 
     /*
@@ -31,19 +38,38 @@ public class L2Assignment {
      * Output: { "HR": ["Alice", "Charlie"], "IT": ["Bob", "David"], "Finance":
      * ["Eve"]}
      */
+
+
+    /**
+     * Collectors.mapping: transforms(maps) elements of a stream before collecting them
+     * Downstream collector: like a secondary operation that processes elements after they've been grouped or partitioned. Think of it as a pipeline where data flows:
+     * Primary Collection → Downstream Collection
+     * Common downstream collectors include:
+     * Collectors.counting() - counts elements
+     * Collectors.summing___() - sums numeric values
+     * Collectors.mapping() - transforms elements before collecting
+     * Collectors.toList(), toSet() - collects into collections
+     * Collectors.reducing() - reduces elements to a single value
+     */
+
+    // Collectors.mapping's second argument should be a downstream collector. example: Collectors.toList()
     public Map<String, List<String>> convertListOfObjectsToMap(Employee[] employees) {
-        return null;
+        return Arrays.stream(employees).
+                collect(Collectors.groupingBy(Employee::department,
+                        Collectors.mapping(Employee::name, Collectors.toList())
+                ));
     }
 
     /*
      * 3. 3. Find All Duplicate Elements in a List using Java Streams API.
-     *
      * Example: Input: [1, 2, 3, 4, 5, 3, 2, 1]
-     *
      * Output: [1, 2, 3]
      */
     public List<Integer> findAllDuplicateElementsInList(List<Integer> numbers) {
-        return null;
+        return numbers.stream()
+                .distinct()
+                .filter(x -> Collections.frequency(numbers, x) > 1)
+                .toList();
     }
 
     /*
@@ -63,24 +89,26 @@ public class L2Assignment {
      */
 
     public Map<String, Map<Double, List<String>>> groupByMultipleFields(Employee[] employees) {
-        return null;
+        return Arrays.stream(employees)
+                .collect(Collectors.groupingBy(Employee::department, Collectors.groupingBy(Employee::salary,Collectors.mapping(Employee::name, Collectors.toList()))));
     }
 
     /*
      * 5. Find Longest String in Each Group using Java Streams API.
-     *
      * Example: Input: ["apple", "banana", "pear", "kiwi", "grape", "blueberry"]
-     *
-     * Output: { 'a': "banana", 'b': "blueberry", 'p': "pear", 'k': "kiwi", 'g':
+     * Output: { 'a': "apple", 'b': "blueberry", 'p': "pear", 'k': "kiwi", 'g':
      * "grape" }
-     *
-     *
      * Explanation: The map groups strings by their starting character and maps to
      * the longest string in each group.
      */
 
     public Map<Character, String> findLongestStringInEachGroup(List<String> words) {
-        return null;
+        return words.stream().collect(Collectors.groupingBy(s -> s.charAt(0),
+                Collectors.collectingAndThen(
+                        Collectors.maxBy(Comparator.comparingInt(String::length)),
+                        opt -> opt.orElse("")
+                )
+                ));
     }
 
     /*
