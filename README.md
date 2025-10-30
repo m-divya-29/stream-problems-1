@@ -13,6 +13,12 @@ This project demonstrates various Java Streams operations through assignment-sty
 
 Feel free to modify and extend the assignments as needed for your learning purposes.
 
-
+---
+## Some useful tips
+### Set jdk to 21 to just this project(powershell)
+```
+$env:JAVA_HOME="C:\Users\itsme\Downloads\jdk-21.0.5_windows-x64_bin\jdk-21.0.5"
+$env:PATH="$env:JAVA_HOME\bin;$env:PATH"
+```
 Happy coding!
 
